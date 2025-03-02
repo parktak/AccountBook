@@ -44,11 +44,11 @@ struct AddHistoryView: View {
     
     private func makePageView() -> some View {
         
-//        if #available(iOS 14.0, *) {
-//            return pageViewFor14()
-//        } else {
+        if #available(iOS 14.0, *) {
+            return pageViewFor14()
+        } else {
             return pageViewControllerForUIKit()
-//        }
+        }
     }
     
     @available(iOS 14.0, *)
