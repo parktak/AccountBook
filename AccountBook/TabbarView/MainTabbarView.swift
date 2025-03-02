@@ -8,16 +8,36 @@
 import SwiftUI
 
 struct MainTabbarView: View {
+    init() {
+        UITabBar.appearance().backgroundColor = .lightGray
+    }
+    
     var body: some View {
         TabView {
             AccountView().tabItem {
-                Text("기록")
+                VStack {
+                    Image("icList")
+                    Text("기록")
+                }
             }
+            
             AccountDetailView()
                 .tabItem {
-                    Text("차트")
+                    VStack {
+                        Image("icChart")
+                        Text("차트")
+                    }
+                }
+            AddHistoryView()
+                .tabItem {
+                    VStack {
+                        Image("icAdd")
+                            .resizable()
+                            .frame(width: 40,height: 40)
+                    }
                 }
         }
+        
     }
 }
 

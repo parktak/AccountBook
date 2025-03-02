@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD5DC7BB2D73A38E009255D9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */; };
+		FD5DC7BD2D73A601009255D9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BC2D73A601009255D9 /* Log.swift */; };
+		FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */; };
+		FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */; };
 		FDABBFBC2D693D6400801887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFBB2D693D6400801887 /* AppDelegate.swift */; };
 		FDABBFBE2D693D6400801887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFBD2D693D6400801887 /* SceneDelegate.swift */; };
 		FDABBFC02D693D6400801887 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFBF2D693D6400801887 /* ViewController.swift */; };
@@ -24,6 +28,8 @@
 		FDABBFF82D695D3800801887 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFF72D695D3800801887 /* AccountView.swift */; };
 		FDABBFFB2D695D8100801887 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFFA2D695D8100801887 /* ViewExtension.swift */; };
 		FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFFD2D695E1600801887 /* AccountDetailView.swift */; };
+		FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */; };
+		FDB27D532D6A7F1D00B8062C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB27D522D6A7F1D00B8062C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		FD5DC7BC2D73A601009255D9 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewPageViewControllerWrapper.swift; sourceTree = "<group>"; };
 		FDABBFB82D693D6400801887 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABBFBB2D693D6400801887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDABBFBD2D693D6400801887 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +75,8 @@
 		FDABBFF72D695D3800801887 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		FDABBFFA2D695D8100801887 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		FDABBFFD2D695E1600801887 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
+		FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
+		FDB27D522D6A7F1D00B8062C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD5DC7C02D73AEAC009255D9 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		FDAAF7AF2D73D4EC001DA283 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		FDAAF7B02D73D50E001DA283 /* AddHistoryView */ = {
+			isa = PBXGroup;
+			children = (
+				FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */,
+				FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */,
+			);
+			path = AddHistoryView;
+			sourceTree = "<group>";
+		};
 		FDABBFAF2D693D6400801887 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +152,10 @@
 		FDABBFBA2D693D6400801887 /* AccountBook */ = {
 			isa = PBXGroup;
 			children = (
+				FDAAF7B02D73D50E001DA283 /* AddHistoryView */,
+				FDAAF7AF2D73D4EC001DA283 /* CommonUI */,
+				FD5DC7C02D73AEAC009255D9 /* DI */,
+				FDB27D512D6A7EFC00B8062C /* resource */,
 				FDABBFFC2D695DAC00801887 /* Account */,
 				FDABBFF92D695D7400801887 /* Extensions */,
 				FDABBFF42D695CB300801887 /* TabbarView */,
@@ -126,7 +167,6 @@
 				FDABBFEC2D693D9B00801887 /* AccountBookViewModel.swift */,
 				FDABBFEB2D693D9A00801887 /* AccountData.swift */,
 				FDABBFC12D693D6400801887 /* Main.storyboard */,
-				FDABBFC42D693D6700801887 /* Assets.xcassets */,
 				FDABBFC62D693D6700801887 /* LaunchScreen.storyboard */,
 				FDABBFC92D693D6700801887 /* Info.plist */,
 			);
@@ -154,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FDABBFF22D69428200801887 /* ViewDidloadModifier.swift */,
+				FD5DC7BC2D73A601009255D9 /* Log.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -181,6 +222,15 @@
 				FDABBFFD2D695E1600801887 /* AccountDetailView.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		FDB27D512D6A7EFC00B8062C /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				FDABBFC42D693D6700801887 /* Assets.xcassets */,
+				FDB27D522D6A7F1D00B8062C /* Images.xcassets */,
+			);
+			path = resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDABBFC82D693D6700801887 /* LaunchScreen.storyboard in Resources */,
+				FDB27D532D6A7F1D00B8062C /* Images.xcassets in Resources */,
 				FDABBFC52D693D6700801887 /* Assets.xcassets in Resources */,
 				FDABBFC32D693D6400801887 /* Main.storyboard in Resources */,
 			);
@@ -321,10 +372,15 @@
 				FDABBFFB2D695D8100801887 /* ViewExtension.swift in Sources */,
 				FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */,
 				FDABBFEE2D693D9B00801887 /* AccountBookViewModel.swift in Sources */,
+				FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */,
 				FDABBFBE2D693D6400801887 /* SceneDelegate.swift in Sources */,
 				FDABBFF82D695D3800801887 /* AccountView.swift in Sources */,
+				FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */,
+				FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */,
+				FD5DC7BB2D73A38E009255D9 /* PageViewController.swift in Sources */,
 				FDABBFF32D69428200801887 /* ViewDidloadModifier.swift in Sources */,
 				FDABBFED2D693D9B00801887 /* AccountData.swift in Sources */,
+				FD5DC7BD2D73A601009255D9 /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
