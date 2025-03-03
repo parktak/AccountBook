@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddHistoryView: View {
     @State private var selectedIndex = 0
-    @Binding var isPresented: Bool
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -17,7 +16,6 @@ struct AddHistoryView: View {
             ZStack {
                 HStack {
                     Button(action: {
-                        isPresented.toggle()
                         presentationMode.wrappedValue.dismiss()
                         
                     }, label: {
@@ -69,24 +67,9 @@ struct AddHistoryView: View {
 }
 
 
-struct SpendingView: View {
-    var body: some View {
-        Text("a")
+struct AddHistoryView_Previews: PreviewProvider {
+    
+    static var previews: AddHistoryView {
+        AddHistoryView()
     }
 }
-
-struct IncomingView: View {
-    var body: some View {
-        Text("d")
-    }
-}
-
-struct TransferView: View {
-    var body: some View {
-        Text("Transfeer")
-    }
-}
-
-//#Preview {
-//    AddHistoryView()
-//}

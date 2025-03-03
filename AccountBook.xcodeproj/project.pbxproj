@@ -32,6 +32,7 @@
 		FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFFD2D695E1600801887 /* AccountDetailView.swift */; };
 		FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */; };
 		FDB27D532D6A7F1D00B8062C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB27D522D6A7F1D00B8062C /* Images.xcassets */; };
+		FDC950812D7647CB00903F4A /* AddViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC950802D7647CB00903F4A /* AddViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		FDABBFFD2D695E1600801887 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
 		FDB27D522D6A7F1D00B8062C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FDC950802D7647CB00903F4A /* AddViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */,
 				FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */,
+				FDC950802D7647CB00903F4A /* AddViews.swift */,
 			);
 			path = AddHistoryView;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				FDABBFBC2D693D6400801887 /* AppDelegate.swift in Sources */,
 				FDABBFF02D693DA400801887 /* ContentView.swift in Sources */,
 				FDABBFF62D695CE000801887 /* MainTabbarView.swift in Sources */,
+				FDC950812D7647CB00903F4A /* AddViews.swift in Sources */,
 				FDABBFFB2D695D8100801887 /* ViewExtension.swift in Sources */,
 				FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */,
 				FDABBFEE2D693D9B00801887 /* AccountBookViewModel.swift in Sources */,

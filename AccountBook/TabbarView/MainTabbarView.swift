@@ -78,7 +78,10 @@ struct MainTabView: View {
         .frame(height: 60)
         .background(Color("34a80Color"))
         .fullScreenSheet(isPresented: $isAddviewPresented) {
-            AddHistoryView(isPresented: $isAddviewPresented)
+            AddHistoryView()
+                .onDisappear {
+                    isAddviewPresented = false
+                }
         }
     }
     
