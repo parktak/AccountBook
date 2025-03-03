@@ -7,36 +7,107 @@
 
 import SwiftUI
 
+enum MainTabType {
+    case history, chart
+}
+
 struct MainTabbarView: View {
-    init() {
-        UITabBar.appearance().backgroundColor = .lightGray
-    }
+    
+    @State var selectedTab: MainTabType = .history
+
     
     var body: some View {
-        TabView {
-            AccountView().tabItem {
-                VStack {
-                    Image("icList")
-                    Text("기록")
-                }
+        VStack {
+            switch selectedTab {
+            case .history:
+                AccountView()
+            case .chart:
+                AccountDetailView()
             }
             
-            AccountDetailView()
-                .tabItem {
-                    VStack {
-                        Image("icChart")
-                        Text("차트")
-                    }
-                }
-            AddHistoryView()
-                .tabItem {
-                    VStack {
-                        Image("icAdd")
-                            .resizable()
-                            .frame(width: 40,height: 40)
-                    }
-                }
+            Spacer()
+            MainTabView(selectedTab: $selectedTab)
         }
+        
+    }
+}
+
+struct MainTabView: View {
+    @Binding var selectedTab: MainTabType
+    @State var isAddviewPresented = false
+    
+    var body: some View {
+        ZStack (alignment: .bottom) {
+            HStack(alignment: .bottom) {
+                
+                Spacer()
+                Button {
+                    selectedTab = .history
+                    
+                } label: {
+                    createTabItem(.history, isSelected: selectedTab == .history)
+                }
+                Spacer()
+                Button {
+                    selectedTab = .chart
+                } label: {
+                    createTabItem(.chart, isSelected: selectedTab == .chart)
+                }
+                Spacer()
+                
+            }
+            .frame(height: 40)
+            
+            Button {
+                withAnimation {
+                    isAddviewPresented.toggle()
+                }
+            } label: {
+                VStack {
+                    Image("icAdd")
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 40,height: 40)
+                        .foregroundColor(.yellow)
+                }
+                .frame(alignment: .top)
+                .offset(y: -20)
+            }
+            
+        }
+        .frame(height: 60)
+        .background(Color("34a80Color"))
+        .fullScreenSheet(isPresented: $isAddviewPresented) {
+            AddHistoryView(isPresented: $isAddviewPresented)
+        }
+    }
+    
+    private func createTabItem(_ type: MainTabType, isSelected: Bool) -> some View {
+        let imageName: String
+        let title: String
+        
+        switch type {
+        case .history:
+            imageName = "icList"
+            title = "기록"
+        case .chart:
+            imageName = "icChart"
+            title = "차트"
+        }
+        
+        let selectedColor: Color = Color("AccentColor", bundle: nil)
+        let color: Color = .black
+        
+        return VStack {
+            Image(imageName)
+                .renderingMode(.template)
+                .foregroundColor(isSelected ? selectedColor : color)
+                .frame(width: 30,height: 30)
+            Text(title)
+                .foregroundColor(isSelected ? selectedColor : color)
+                .font(.system(size: 12))
+        }
+        .frame(height: 40, alignment: .bottom)
         
     }
 }

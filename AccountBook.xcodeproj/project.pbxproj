@@ -10,6 +10,8 @@
 		FD5DC7BB2D73A38E009255D9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */; };
 		FD5DC7BD2D73A601009255D9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BC2D73A601009255D9 /* Log.swift */; };
 		FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */; };
+		FD7A97542D757487001129E0 /* FullScreenSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A97532D757487001129E0 /* FullScreenSheetHelper.swift */; };
+		FD8A61A42D756F2E0011271D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8A61A32D756F2E0011271D /* Colors.xcassets */; };
 		FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */; };
 		FDABBFBC2D693D6400801887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFBB2D693D6400801887 /* AppDelegate.swift */; };
 		FDABBFBE2D693D6400801887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFBD2D693D6400801887 /* SceneDelegate.swift */; };
@@ -53,6 +55,8 @@
 		FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FD5DC7BC2D73A601009255D9 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		FD7A97532D757487001129E0 /* FullScreenSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenSheetHelper.swift; sourceTree = "<group>"; };
+		FD8A61A32D756F2E0011271D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewPageViewControllerWrapper.swift; sourceTree = "<group>"; };
 		FDABBFB82D693D6400801887 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABBFBB2D693D6400801887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */,
+				FD7A97532D757487001129E0 /* FullScreenSheetHelper.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			children = (
 				FDABBFC42D693D6700801887 /* Assets.xcassets */,
 				FDB27D522D6A7F1D00B8062C /* Images.xcassets */,
+				FD8A61A32D756F2E0011271D /* Colors.xcassets */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8A61A42D756F2E0011271D /* Colors.xcassets in Resources */,
 				FDABBFC82D693D6700801887 /* LaunchScreen.storyboard in Resources */,
 				FDB27D532D6A7F1D00B8062C /* Images.xcassets in Resources */,
 				FDABBFC52D693D6700801887 /* Assets.xcassets in Resources */,
@@ -377,6 +384,7 @@
 				FDABBFF82D695D3800801887 /* AccountView.swift in Sources */,
 				FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */,
 				FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */,
+				FD7A97542D757487001129E0 /* FullScreenSheetHelper.swift in Sources */,
 				FD5DC7BB2D73A38E009255D9 /* PageViewController.swift in Sources */,
 				FDABBFF32D69428200801887 /* ViewDidloadModifier.swift in Sources */,
 				FDABBFED2D693D9B00801887 /* AccountData.swift in Sources */,

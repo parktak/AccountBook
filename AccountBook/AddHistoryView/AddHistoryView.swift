@@ -9,14 +9,16 @@ import SwiftUI
 
 struct AddHistoryView: View {
     @State private var selectedIndex = 0
-    
-    
+    @Binding var isPresented: Bool
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(alignment: .leading, content: {
             ZStack {
                 HStack {
                     Button(action: {
+                        isPresented.toggle()
+                        presentationMode.wrappedValue.dismiss()
                         
                     }, label: {
                         Text("취소")

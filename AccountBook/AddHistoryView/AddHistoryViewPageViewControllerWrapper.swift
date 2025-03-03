@@ -9,11 +9,8 @@ import Foundation
 import SwiftUI
 
 struct AddHistoryViewPageViewControllerWrapper: UIViewControllerRepresentable {
+    typealias UIViewControllerType = PageViewController
     @Binding var page: Int
-    
-    init(page: Binding<Int>) {
-        self._page = page
-    }
     
     func makeUIViewController(context: Context) -> PageViewController {
         DIContainer.getPageViewController(delegate: context.coordinator)
@@ -39,7 +36,6 @@ struct AddHistoryViewPageViewControllerWrapper: UIViewControllerRepresentable {
         uiViewController.setViewControllers([viewControllers[page]], direction: direction, animated: context.coordinator.withAnimated)
     }
     
-    typealias UIViewControllerType = PageViewController
     
 }
 
