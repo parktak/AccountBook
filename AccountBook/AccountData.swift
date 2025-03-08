@@ -13,13 +13,13 @@ enum SpendType {
 }
 
 struct AccountData: Identifiable, Hashable {
-    static func == (lhs: AccountData, rhs: AccountData) -> Bool {
-        lhs.id == rhs.id
-    }
-   
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+//    static func == (lhs: AccountData, rhs: AccountData) -> Bool {
+//        lhs.id == rhs.id
+//    }
+//   
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(id)
+//    }
     
     var id: String = ""
     var type: SpendType = .spending
@@ -33,7 +33,7 @@ struct AccountData: Identifiable, Hashable {
     }}
 }
 
-struct Category: Identifiable {
+struct Category: Identifiable, Hashable {
     var id: String { code }
     
     var type: SpendType = .spending
@@ -65,7 +65,11 @@ class MockData {
             Category(type: .spending, code: "cate3", title: "술", image: "soju"),
             Category(type: .income, code: "cate4", title: "주식", image: "salary"),
             Category(type: .spending, code: "cate5", title: "군것질", image: "food"),
-            Category(type: .spending, code: "cate6", title: "야식", image: "soju")
+            Category(type: .spending, code: "cate6", title: "야식", image: "soju"),
+            Category(type: .income, code: "cate7", title: "배민알바", image: "salary"),
+            Category(type: .spending, code: "cate8", title: "쇼핑", image: "food"),
+            Category(type: .spending, code: "cate9", title: "그냥", image: "soju")
+        
         ]
     }
 }

@@ -36,6 +36,8 @@
 		FDAD93A92D7C4FE70058DBAE /* IncomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAD93A82D7C4FE70058DBAE /* IncomingView.swift */; };
 		FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */; };
 		FDB27D532D6A7F1D00B8062C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB27D522D6A7F1D00B8062C /* Images.xcassets */; };
+		FDB6B4FB2D7CE3F10060B068 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6B4FA2D7CE3F10060B068 /* GridView.swift */; };
+		FDB6B4FD2D7CE8440060B068 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6B4FC2D7CE8440060B068 /* CategoryGridView.swift */; };
 		FDC950812D7647CB00903F4A /* AddViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC950802D7647CB00903F4A /* AddViews.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		FDAD93A82D7C4FE70058DBAE /* IncomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingView.swift; sourceTree = "<group>"; };
 		FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
 		FDB27D522D6A7F1D00B8062C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FDB6B4FA2D7CE3F10060B068 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		FDB6B4FC2D7CE8440060B068 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
 		FDC950802D7647CB00903F4A /* AddViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,7 @@
 			children = (
 				FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */,
 				FD7A97532D757487001129E0 /* FullScreenSheetHelper.swift */,
+				FDB6B4FA2D7CE3F10060B068 /* GridView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */,
 				FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */,
 				FDC950802D7647CB00903F4A /* AddViews.swift */,
+				FDB6B4FC2D7CE8440060B068 /* CategoryGridView.swift */,
 			);
 			path = AddHistoryView;
 			sourceTree = "<group>";
@@ -411,10 +417,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB6B4FD2D7CE8440060B068 /* CategoryGridView.swift in Sources */,
 				FDABBFC02D693D6400801887 /* ViewController.swift in Sources */,
 				FDABBFBC2D693D6400801887 /* AppDelegate.swift in Sources */,
 				FDABBFF02D693DA400801887 /* ContentView.swift in Sources */,
 				FDABBFF62D695CE000801887 /* MainTabbarView.swift in Sources */,
+				FDB6B4FB2D7CE3F10060B068 /* GridView.swift in Sources */,
 				FDC950812D7647CB00903F4A /* AddViews.swift in Sources */,
 				FDABBFFB2D695D8100801887 /* ViewExtension.swift in Sources */,
 				FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */,

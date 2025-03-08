@@ -9,13 +9,20 @@ import SwiftUI
 
 struct SpendingView: View {
     @ObservedObject var viewModel: AddHistoryViewModelWrapper
+    
+    
     var body: some View {
-        List {
-            ForEach(Array(viewModel.spendingCategories)) { category in
-                Text(category.title)
-            }
-        }
+        let columns = 4
+        let list = viewModel.spendingCategories
+        
+//        if #available(iOS 14.0, *) {
+//            CategoryVGridView(columns: columns, list: list)
+//            
+//        } else {
+            CategoryGridListView(columns: columns, list: list)
+//        }
     }
+    
 }
 
 //#Preview {

@@ -75,3 +75,15 @@ struct AddHistoryView_Previews: PreviewProvider {
         AddHistoryDIContainer.createAddHistoryView()
     }
 }
+
+/// for category add ui
+extension Category {
+    func toView() -> some View {
+        VStack(alignment: .center) {
+            Image(image)
+                .resizable()
+                .frame(width: 40, height: 40)
+            Text(title)
+        }
+    }
+}

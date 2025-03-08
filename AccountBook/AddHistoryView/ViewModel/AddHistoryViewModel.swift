@@ -23,14 +23,12 @@ class AddHistoryViewModelWrapper: ObservableObject {
     private func binding() {
         viewModel.$incomeCategories
             .sink { [weak self] category in
-                print(category)
                 self?.incomeCategories = category
             }
             .store(in: &cancellable)
         
         viewModel.$spendingCategories
             .sink { [weak self] category in
-                print(category)
                 self?.spendingCategories = category
             }
             .store(in: &cancellable)
