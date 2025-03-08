@@ -11,13 +11,14 @@ import SwiftUI
 struct AddHistoryViewPageViewControllerWrapper: UIViewControllerRepresentable {
     typealias UIViewControllerType = PageViewController
     @Binding var page: Int
+    var viewModel: AddHistoryViewModelWrapper
     
     func makeUIViewController(context: Context) -> PageViewController {
         DIContainer.getPageViewController(delegate: context.coordinator)
     }
     
     func makeCoordinator() -> AddHistoryViewPageCoordinator {
-        return AddHistoryViewPageCoordinator(currentPage: _page)
+        return AddHistoryViewPageCoordinator(currentPage: _page, viewModel: viewModel)
     }
     
     func updateUIViewController(_ uiViewController: PageViewController, context: Context) {
@@ -43,9 +44,11 @@ class AddHistoryViewPageCoordinator: PageViewControllerDatasource {
 
     @Binding var currentPage: Int
     private(set) var withAnimated = false
+    var viewModel: AddHistoryViewModelWrapper
     
-    init(currentPage: Binding<Int>) {
+    init(currentPage: Binding<Int>, viewModel: AddHistoryViewModelWrapper) {
         self._currentPage = currentPage
+        self.viewModel = viewModel
     }
     
     func didChangePage(_ index: Int) {
@@ -66,8 +69,8 @@ class AddHistoryViewPageCoordinator: PageViewControllerDatasource {
     }
     
     lazy var viewControllers: [UIViewController] = {
-        [UIHostingController(rootView: SpendingView()),
-         UIHostingController(rootView: IncomingView()),
+        [UIHostingController(rootView:AddHistoryDIContainer.createSpendingView(viewModel)),
+         UIHostingController(rootView: AddHistoryDIContainer.createIncomingView(viewModel)),
          UIHostingController(rootView: TransferView())
          ]
     }()

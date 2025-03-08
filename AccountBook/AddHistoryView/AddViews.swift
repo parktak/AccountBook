@@ -8,17 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct SpendingView: View {
-    var body: some View {
-        Text("a")
-    }
-}
-
-struct IncomingView: View {
-    var body: some View {
-        Text("d")
-    }
-}
 
 struct TransferView: View {
     var body: some View {

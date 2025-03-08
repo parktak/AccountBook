@@ -33,7 +33,9 @@ struct AccountData: Identifiable, Hashable {
     }}
 }
 
-struct Category {
+struct Category: Identifiable {
+    var id: String { code }
+    
     var type: SpendType = .spending
     var code = ""
     var title = ""
@@ -60,7 +62,10 @@ class MockData {
         [
             Category(type: .income, code: "cate1", title: "월급", image: "salary"),
             Category(type: .spending, code: "cate2", title: "식비", image: "food"),
-            Category(type: .spending, code: "cate3", title: "술", image: "soju")
+            Category(type: .spending, code: "cate3", title: "술", image: "soju"),
+            Category(type: .income, code: "cate4", title: "주식", image: "salary"),
+            Category(type: .spending, code: "cate5", title: "군것질", image: "food"),
+            Category(type: .spending, code: "cate6", title: "야식", image: "soju")
         ]
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddHistoryView: View {
+    @ObservedObject var viewModel: AddHistoryViewModelWrapper
+    
     @State private var selectedIndex = 0
     @Environment(\.presentationMode) var presentationMode
     
@@ -54,15 +56,15 @@ struct AddHistoryView: View {
     @available(iOS 14.0, *)
     private func pageViewFor14() -> some View {
         TabView(selection: $selectedIndex) {
-            SpendingView().tag(0)
-            IncomingView().tag(1)
+            AddHistoryDIContainer.createSpendingView(viewModel).tag(0)
+            AddHistoryDIContainer.createIncomingView(viewModel).tag(1)
             TransferView().tag(2)
         }
         .tabViewStyle(.page)
     }
     
     private func pageViewControllerForUIKit() -> some View {
-        AddHistoryViewPageViewControllerWrapper(page: $selectedIndex)
+        AddHistoryViewPageViewControllerWrapper(page: $selectedIndex, viewModel: self.viewModel)
     }
 }
 
@@ -70,6 +72,6 @@ struct AddHistoryView: View {
 struct AddHistoryView_Previews: PreviewProvider {
     
     static var previews: AddHistoryView {
-        AddHistoryView()
+        AddHistoryDIContainer.createAddHistoryView()
     }
 }
