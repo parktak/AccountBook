@@ -70,7 +70,7 @@ class AddHistoryViewPageCoordinator: PageViewControllerDatasource {
     
     lazy var viewControllers: [UIViewController] = {
         [UIHostingController(rootView:AddHistoryDIContainer.createSpendingView(viewModel)),
-         UIHostingController(rootView: AddHistoryDIContainer.createIncomingView(viewModel)),
+         UIHostingController(rootView: AddHistoryDIContainer.createIncomView(viewModel)),
          UIHostingController(rootView: TransferView())
          ]
     }()

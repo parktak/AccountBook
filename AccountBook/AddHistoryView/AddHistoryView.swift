@@ -56,7 +56,7 @@ struct AddHistoryView: View {
     private func pageViewFor14() -> some View {
         TabView(selection: $selectedIndex) {
             AddHistoryDIContainer.createSpendingView(viewModel).tag(0)
-            AddHistoryDIContainer.createIncomingView(viewModel).tag(1)
+            AddHistoryDIContainer.createIncomView(viewModel).tag(1)
             TransferView().tag(2)
         }
         .tabViewStyle(.page)

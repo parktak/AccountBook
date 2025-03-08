@@ -23,7 +23,7 @@ class AddHistoryDIContainer {
         return MakeHistoryView(viewModelWrapper: wrapper)
     }
     
-    static func createIncomingView(_ viewModel: AddHistoryViewModel) -> MakeHistoryView {
+    static func createIncomView(_ viewModel: AddHistoryViewModel) -> MakeHistoryView {
         let wrapper = createAddHistoryViewModelWrapper(viewModel: viewModel, type: .income )
         return MakeHistoryView(viewModelWrapper: wrapper)
     }
