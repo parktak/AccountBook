@@ -15,12 +15,12 @@ struct SpendingView: View {
         let columns = 4
         let list = viewModel.spendingCategories
         
-//        if #available(iOS 14.0, *) {
-//            CategoryVGridView(columns: columns, list: list)
-//            
-//        } else {
+        if #available(iOS 14.0, *) {
+            CategoryVGridView(columns: columns, list: list)
+            
+        } else {
             CategoryGridListView(columns: columns, list: list)
-//        }
+        }
     }
     
 }
