@@ -12,7 +12,7 @@
 		FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */; };
 		FD7A97542D757487001129E0 /* FullScreenSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A97532D757487001129E0 /* FullScreenSheetHelper.swift */; };
 		FD8A61A42D756F2E0011271D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8A61A32D756F2E0011271D /* Colors.xcassets */; };
-		FD8D3BC82D7C421000DC84EC /* SpendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8D3BC72D7C421000DC84EC /* SpendingView.swift */; };
+		FD8D3BC82D7C421000DC84EC /* MakeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8D3BC72D7C421000DC84EC /* MakeHistoryView.swift */; };
 		FD8D3BCA2D7C429A00DC84EC /* AddHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8D3BC92D7C429A00DC84EC /* AddHistoryViewModel.swift */; };
 		FD8D3BCE2D7C452C00DC84EC /* AddHistoryDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8D3BCD2D7C452C00DC84EC /* AddHistoryDIContainer.swift */; };
 		FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */; };
@@ -33,7 +33,6 @@
 		FDABBFF82D695D3800801887 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFF72D695D3800801887 /* AccountView.swift */; };
 		FDABBFFB2D695D8100801887 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFFA2D695D8100801887 /* ViewExtension.swift */; };
 		FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFFD2D695E1600801887 /* AccountDetailView.swift */; };
-		FDAD93A92D7C4FE70058DBAE /* IncomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAD93A82D7C4FE70058DBAE /* IncomingView.swift */; };
 		FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */; };
 		FDB27D532D6A7F1D00B8062C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB27D522D6A7F1D00B8062C /* Images.xcassets */; };
 		FDB6B4FB2D7CE3F10060B068 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6B4FA2D7CE3F10060B068 /* GridView.swift */; };
@@ -64,7 +63,7 @@
 		FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		FD7A97532D757487001129E0 /* FullScreenSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenSheetHelper.swift; sourceTree = "<group>"; };
 		FD8A61A32D756F2E0011271D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		FD8D3BC72D7C421000DC84EC /* SpendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingView.swift; sourceTree = "<group>"; };
+		FD8D3BC72D7C421000DC84EC /* MakeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeHistoryView.swift; sourceTree = "<group>"; };
 		FD8D3BC92D7C429A00DC84EC /* AddHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewModel.swift; sourceTree = "<group>"; };
 		FD8D3BCD2D7C452C00DC84EC /* AddHistoryDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryDIContainer.swift; sourceTree = "<group>"; };
 		FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewPageViewControllerWrapper.swift; sourceTree = "<group>"; };
@@ -89,7 +88,6 @@
 		FDABBFF72D695D3800801887 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		FDABBFFA2D695D8100801887 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		FDABBFFD2D695E1600801887 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
-		FDAD93A82D7C4FE70058DBAE /* IncomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingView.swift; sourceTree = "<group>"; };
 		FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
 		FDB27D522D6A7F1D00B8062C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FDB6B4FA2D7CE3F10060B068 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
@@ -268,8 +266,7 @@
 		FDAD93A72D7C4FCD0058DBAE /* PageComponentViews */ = {
 			isa = PBXGroup;
 			children = (
-				FD8D3BC72D7C421000DC84EC /* SpendingView.swift */,
-				FDAD93A82D7C4FE70058DBAE /* IncomingView.swift */,
+				FD8D3BC72D7C421000DC84EC /* MakeHistoryView.swift */,
 			);
 			path = PageComponentViews;
 			sourceTree = "<group>";
@@ -429,11 +426,10 @@
 				FDABBFEE2D693D9B00801887 /* AccountBookViewModel.swift in Sources */,
 				FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */,
 				FDABBFBE2D693D6400801887 /* SceneDelegate.swift in Sources */,
-				FD8D3BC82D7C421000DC84EC /* SpendingView.swift in Sources */,
+				FD8D3BC82D7C421000DC84EC /* MakeHistoryView.swift in Sources */,
 				FD8D3BCA2D7C429A00DC84EC /* AddHistoryViewModel.swift in Sources */,
 				FDABBFF82D695D3800801887 /* AccountView.swift in Sources */,
 				FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */,
-				FDAD93A92D7C4FE70058DBAE /* IncomingView.swift in Sources */,
 				FD8D3BCE2D7C452C00DC84EC /* AddHistoryDIContainer.swift in Sources */,
 				FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */,
 				FD7A97542D757487001129E0 /* FullScreenSheetHelper.swift in Sources */,

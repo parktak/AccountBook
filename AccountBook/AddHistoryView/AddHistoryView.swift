@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddHistoryView: View {
-    @ObservedObject var viewModel: AddHistoryViewModelWrapper
+    var viewModel: AddHistoryViewModel
     
     @State private var selectedIndex = 0
     @Environment(\.presentationMode) var presentationMode
@@ -45,7 +45,6 @@ struct AddHistoryView: View {
     }
     
     private func makePageView() -> some View {
-        
         if #available(iOS 14.0, *) {
             return pageViewFor14()
         } else {

@@ -11,7 +11,7 @@ import SwiftUI
 struct AddHistoryViewPageViewControllerWrapper: UIViewControllerRepresentable {
     typealias UIViewControllerType = PageViewController
     @Binding var page: Int
-    var viewModel: AddHistoryViewModelWrapper
+    var viewModel: AddHistoryViewModel
     
     func makeUIViewController(context: Context) -> PageViewController {
         DIContainer.getPageViewController(delegate: context.coordinator)
@@ -44,9 +44,9 @@ class AddHistoryViewPageCoordinator: PageViewControllerDatasource {
 
     @Binding var currentPage: Int
     private(set) var withAnimated = false
-    var viewModel: AddHistoryViewModelWrapper
+    var viewModel: AddHistoryViewModel
     
-    init(currentPage: Binding<Int>, viewModel: AddHistoryViewModelWrapper) {
+    init(currentPage: Binding<Int>, viewModel: AddHistoryViewModel) {
         self._currentPage = currentPage
         self.viewModel = viewModel
     }

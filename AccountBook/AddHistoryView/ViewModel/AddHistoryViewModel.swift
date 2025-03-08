@@ -7,32 +7,39 @@
 
 import Foundation
 import Combine
+enum AddHistoryType {
+    case spending, income
+}
 
 class AddHistoryViewModelWrapper: ObservableObject {
     private(set) var viewModel: AddHistoryViewModel
-    @Published var incomeCategories = [Category]()
-    @Published var spendingCategories = [Category]()
+    @Published var categories = [Category]()
     private var cancellable = Set<AnyCancellable>()
+    private var type: AddHistoryType
     
-    init(viewModel: AddHistoryViewModel) {
+    init(viewModel: AddHistoryViewModel, type: AddHistoryType) {
         self.viewModel = viewModel
-        viewModel.loadData()
+        self.type = type
         binding()
     }
     
     private func binding() {
-        viewModel.$incomeCategories
-            .sink { [weak self] category in
-                self?.incomeCategories = category
-            }
-            .store(in: &cancellable)
-        
-        viewModel.$spendingCategories
-            .sink { [weak self] category in
-                self?.spendingCategories = category
-            }
-            .store(in: &cancellable)
+        switch type {
+        case .income:
+            viewModel.$incomeCategories
+                .sink { [weak self] category in
+                    self?.categories = category
+                }
+                .store(in: &cancellable)
+        case .spending:
+            viewModel.$spendingCategories
+                .sink { [weak self] category in
+                    self?.categories = category
+                }
+                .store(in: &cancellable)
+        }
     }
+    
 }
 
 class AddHistoryViewModel {
