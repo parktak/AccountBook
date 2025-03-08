@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//
+
 struct SpendingView: View {
     @ObservedObject var viewModel: AddHistoryViewModelWrapper
     
