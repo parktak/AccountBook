@@ -11,17 +11,19 @@ import SwiftUI
 /// for ios 13
 struct CategoryGridListView: View {
     private let columns: Int
-    private var list: [Category]
+    var viewModelWrapper: AddHistoryViewModelWrapper
     
-    init(columns: Int, list: [Category]) {
+    init(columns: Int, viewModelWrapper: AddHistoryViewModelWrapper) {
         self.columns = columns
-        self.list = list
+        self.viewModelWrapper = viewModelWrapper
     }
     
     var body: some View {
-        ScrollView {
-            GridView(colums: columns, list: list) { category in
-                category.toView()
+        ZStack {
+            ScrollView {
+                GridView(colums: columns, list: viewModelWrapper.categories) { category in
+                    category.toView()
+                }
             }
         }
     }
@@ -31,11 +33,11 @@ struct CategoryGridListView: View {
 @available(iOS 14.0, *)
 struct CategoryVGridView: View {
     private let columns: Int
-    private var list: [Category]
+    var viewModelWrapper: AddHistoryViewModelWrapper
     
-    init(columns: Int, list: [Category]) {
+    init(columns: Int, viewModelWrapper: AddHistoryViewModelWrapper) {
         self.columns = columns
-        self.list = list
+        self.viewModelWrapper = viewModelWrapper
     }
     
     let gridItems = [
@@ -46,16 +48,29 @@ struct CategoryVGridView: View {
     ]
     
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid(columns: gridItems, alignment: .center) {
-                    ForEach(list) { category in
-                        category.toView()
+        ZStack {
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: gridItems, alignment: .center) {
+                        ForEach(viewModelWrapper.categories) { category in
+                            category.toView()
+                                .onTapGesture {
+                                    
+                                }
+                        }
                     }
+                    .background(Color.yellow)
                 }
-                .background(Color.yellow)
+                Spacer()
             }
-            Spacer()
+            .frame(maxHeight: .infinity)
+            
+            VStack {
+                Spacer()
+                KeyboardView(viewModelWrapper: viewModelWrapper)
+            }
+            .frame(maxHeight: .infinity)
+                
         }
     }
 }

@@ -34,7 +34,7 @@ struct AddHistoryView: View {
             Picker("type", selection: $selectedIndex) {
                 Text("지출").tag(0)
                 Text("수입").tag(1)
-                Text("이체").tag(2)
+//                Text("이체").tag(2)
             }
             .pickerStyle(.segmented)
             makePageView()
@@ -57,7 +57,7 @@ struct AddHistoryView: View {
         TabView(selection: $selectedIndex) {
             AddHistoryDIContainer.createSpendingView(viewModel).tag(0)
             AddHistoryDIContainer.createIncomView(viewModel).tag(1)
-            TransferView().tag(2)
+//            TransferView().tag(2)
         }
         .tabViewStyle(.page)
     }

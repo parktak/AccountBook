@@ -13,13 +13,12 @@ struct MakeHistoryView: View {
     
     var body: some View {
         let columns = 4
-        let list = viewModelWrapper.categories
         
         if #available(iOS 14.0, *) {
-            CategoryVGridView(columns: columns, list: list)
+            CategoryVGridView(columns: columns, viewModelWrapper: viewModelWrapper)
             
         } else {
-            CategoryGridListView(columns: columns, list: list)
+            CategoryGridListView(columns: columns, viewModelWrapper: viewModelWrapper)
         }
     }
     

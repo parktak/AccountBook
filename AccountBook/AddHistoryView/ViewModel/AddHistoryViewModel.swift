@@ -14,6 +14,8 @@ enum AddHistoryType {
 class AddHistoryViewModelWrapper: ObservableObject {
     private(set) var viewModel: AddHistoryViewModel
     @Published var categories = [Category]()
+    @Published private(set) var calculatorData = ""
+    
     private var cancellable = Set<AnyCancellable>()
     private var type: AddHistoryType
     
@@ -38,6 +40,12 @@ class AddHistoryViewModelWrapper: ObservableObject {
                 }
                 .store(in: &cancellable)
         }
+        
+        viewModel.$calculatorData
+            .sink { [weak self] calcData in
+                self?.calculatorData = calcData
+            }
+            .store(in: &cancellable)
     }
     
 }
@@ -46,6 +54,7 @@ class AddHistoryViewModel {
     
     @Published private(set) var incomeCategories = [Category]()
     @Published private(set) var spendingCategories = [Category]()
+    @Published private(set) var calculatorData = ""
     
     func loadData() {
         let categories = MockData.getCategories()
@@ -54,4 +63,75 @@ class AddHistoryViewModel {
         
     }
     
+    func removeLast() {
+        calculatorData.removeLast()
+    }
+    
+    func addCalcData(_ value: String) {
+        
+        if value == "=" {
+            calculate()
+            return
+        }
+        
+        calculatorData += value
+    }
+    
+    private func calculate() {
+        
+        guard let regex = try? NSRegularExpression(pattern: "([+-])", options: []) else {
+            return
+        }
+        let datas = regex.split(string: calculatorData)
+        
+        if datas.isEmpty {
+            return
+        }
+        
+        var isSum = true
+
+        
+        let result = datas.reduce(0) { result, data -> Float in
+            if ["+", "-"].contains(data) {
+                isSum = data == "+"
+                return result
+            }
+            
+            guard let floatValue = Float(data) else {
+                return result
+            }
+            
+            return isSum ? result + floatValue : result - floatValue
+        }
+        
+        let iResult = Int(result)
+        calculatorData = result - Float(iResult) > 0 ? "\(result)" : "\(iResult)"
+    }
+
+}
+
+extension NSRegularExpression {
+    func split(string: String) -> [String] {
+        let matches = self.matches(in: string, range: NSRange(string.startIndex..., in: string))
+        
+        var lastIndex = string.startIndex
+        var result: [String] = []
+        for match in matches {
+            guard let range = Range(match.range, in: string) else {
+                continue
+            }
+            
+            if lastIndex < range.lowerBound {
+                result.append( String(string[lastIndex ..< range.lowerBound]))
+            }
+            
+            result.append(String(string[range]))
+            lastIndex = range.upperBound
+        }
+        
+        if lastIndex < string.endIndex {
+            result.append(String(string[lastIndex ..< string.endIndex]))
+        }
+        return result
+    }
 }
