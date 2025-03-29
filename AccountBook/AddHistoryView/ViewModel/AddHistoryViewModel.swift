@@ -57,7 +57,7 @@ class AddHistoryViewModel {
     @Published private(set) var calculatorData = ""
     
     func loadData() {
-        let categories = MockData.getCategories()
+        let categories = Model.category.getCategoryDatas()
         incomeCategories = categories.filter { $0.type == .income }
         spendingCategories = categories.filter { $0.type == .spending}
         
@@ -106,32 +106,5 @@ class AddHistoryViewModel {
         
         let iResult = Int(result)
         calculatorData = result - Float(iResult) > 0 ? "\(result)" : "\(iResult)"
-    }
-
-}
-
-extension NSRegularExpression {
-    func split(string: String) -> [String] {
-        let matches = self.matches(in: string, range: NSRange(string.startIndex..., in: string))
-        
-        var lastIndex = string.startIndex
-        var result: [String] = []
-        for match in matches {
-            guard let range = Range(match.range, in: string) else {
-                continue
-            }
-            
-            if lastIndex < range.lowerBound {
-                result.append( String(string[lastIndex ..< range.lowerBound]))
-            }
-            
-            result.append(String(string[range]))
-            lastIndex = range.upperBound
-        }
-        
-        if lastIndex < string.endIndex {
-            result.append(String(string[lastIndex ..< string.endIndex]))
-        }
-        return result
     }
 }

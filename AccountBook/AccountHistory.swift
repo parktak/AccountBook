@@ -8,27 +8,20 @@
 import Foundation
 
 
-enum SpendType {
-    case income, spending
+enum SpendType: String {
+    case income = "I", spending = "S"
 }
 
-struct AccountData: Identifiable, Hashable {
-//    static func == (lhs: AccountData, rhs: AccountData) -> Bool {
-//        lhs.id == rhs.id
-//    }
-//   
-//    func hash(into hasher: inout Hasher) {
-//        hasher.combine(id)
-//    }
+struct AccountHistory: Identifiable, Hashable {
     
     var id: String = ""
     var type: SpendType = .spending
     var category = Category()
     var title = ""
-    var amount = 0
+    var amount: Float = 0
     var date = ""
     var memo = ""
-    var money: Int { get {
+    var money: Float { get {
         type == .spending ? (amount * -1) : amount
     }}
 }
@@ -47,14 +40,14 @@ class AccountModel {
 }
 
 class MockData {
-    static func getAccountData() -> [AccountData] {
+    static func getAccountData() -> [AccountHistory] {
         let categories = getCategories()
         
         return [
-            AccountData(id: "acc1", type: .income, category: categories[0], title: "드디어월급", amount: 1000000, date: "2025-02-22", memo: "순삭"),
-            AccountData(id: "acc2", type: .spending, category: categories[1], title: "밥은 먹어야지!", amount: 10000, date: "2025-02-25", memo: ""),
-            AccountData(id: "acc3", type: .spending, category: categories[2], title: "좋아서 술", amount: 50000, date: "2025-02-22", memo: "뇸뇸"),
-            AccountData(id: "acc4", type: .spending, category: categories[2], title: "안좋아서 술", amount: 40000, date: "2025-02-21", memo: ""),
+            AccountHistory(id: "acc1", type: .income, category: categories[0], title: "드디어월급", amount: 1000000, date: "2025-02-22", memo: "순삭"),
+            AccountHistory(id: "acc2", type: .spending, category: categories[1], title: "밥은 먹어야지!", amount: 10000, date: "2025-02-25", memo: ""),
+            AccountHistory(id: "acc3", type: .spending, category: categories[2], title: "좋아서 술", amount: 50000, date: "2025-02-22", memo: "뇸뇸"),
+            AccountHistory(id: "acc4", type: .spending, category: categories[2], title: "안좋아서 술", amount: 40000, date: "2025-02-21", memo: ""),
             ]
     }
     

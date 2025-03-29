@@ -10,17 +10,27 @@ import Foundation
 
 struct UIData {
     var date: String
-    var list: [AccountData]
+    var list: [AccountHistory]
 }
 
 class AccountBookViewModel: ObservableObject {
     
     
-    @Published private(set) var list = [AccountData]()
+    @Published private(set) var list = [AccountHistory]()
     @Published private(set) var hisotryDictionary = [String: UIData]()
     
     func loadData() {
-        list = MockData.getAccountData()
+        let categories = Model.category.getCategoryDatas()
+        var categoryDict = [String: Category]()
+        
+        for category in categories {
+            categoryDict[category.code] = category
+        }
+        
+        list = Model.accountHistory.getHistories().map {
+            $0.toHistoryData(categoryDict[$0.categoryId]!)
+        }
+    
         makeData()
         print("success to load")
     }

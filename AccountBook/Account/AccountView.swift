@@ -62,7 +62,7 @@ struct AccountView: View {
 }
 
 struct AccountCell: View {
-    let data: AccountData
+    let data: AccountHistory
     var body: some View {
         ZStack {
             VStack {

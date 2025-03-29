@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0B8C312D97FA9E00008397 /* NsRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0B8C302D97FA9E00008397 /* NsRegularExpressionExtension.swift */; };
 		FD5DC7BB2D73A38E009255D9 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */; };
 		FD5DC7BD2D73A601009255D9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BC2D73A601009255D9 /* Log.swift */; };
 		FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */; };
@@ -15,6 +16,14 @@
 		FD8D3BC82D7C421000DC84EC /* MakeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8D3BC72D7C421000DC84EC /* MakeHistoryView.swift */; };
 		FD8D3BCA2D7C429A00DC84EC /* AddHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8D3BC92D7C429A00DC84EC /* AddHistoryViewModel.swift */; };
 		FD8D3BCE2D7C452C00DC84EC /* AddHistoryDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8D3BCD2D7C452C00DC84EC /* AddHistoryDIContainer.swift */; };
+		FD91F1512D97E99100899F99 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD91F1502D97E99100899F99 /* CategoryModel.swift */; };
+		FD91F15F2D97F11900899F99 /* CategoryData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD91F15B2D97F11900899F99 /* CategoryData+CoreDataClass.swift */; };
+		FD91F1602D97F11900899F99 /* CategoryData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD91F15C2D97F11900899F99 /* CategoryData+CoreDataProperties.swift */; };
+		FD91F1612D97F11900899F99 /* HistoryData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD91F15D2D97F11900899F99 /* HistoryData+CoreDataClass.swift */; };
+		FD91F1622D97F11900899F99 /* HistoryData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD91F15E2D97F11900899F99 /* HistoryData+CoreDataProperties.swift */; };
+		FDAAC5922D90B32E00A024EB /* AccountBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDAAC5902D90B32E00A024EB /* AccountBook.xcdatamodeld */; };
+		FDAAC59D2D90B6FA00A024EB /* AccountHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAAC59B2D90B6FA00A024EB /* AccountHistoryModel.swift */; };
+		FDAAC5A12D90B76300A024EB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAAC5A02D90B76300A024EB /* Model.swift */; };
 		FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */; };
 		FDABBFBC2D693D6400801887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFBB2D693D6400801887 /* AppDelegate.swift */; };
 		FDABBFBE2D693D6400801887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFBD2D693D6400801887 /* SceneDelegate.swift */; };
@@ -25,7 +34,7 @@
 		FDABBFD32D693D6800801887 /* AccountBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFD22D693D6800801887 /* AccountBookTests.swift */; };
 		FDABBFDD2D693D6800801887 /* AccountBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFDC2D693D6800801887 /* AccountBookUITests.swift */; };
 		FDABBFDF2D693D6800801887 /* AccountBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFDE2D693D6800801887 /* AccountBookUITestsLaunchTests.swift */; };
-		FDABBFED2D693D9B00801887 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFEB2D693D9A00801887 /* AccountData.swift */; };
+		FDABBFED2D693D9B00801887 /* AccountHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFEB2D693D9A00801887 /* AccountHistory.swift */; };
 		FDABBFEE2D693D9B00801887 /* AccountBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFEC2D693D9B00801887 /* AccountBookViewModel.swift */; };
 		FDABBFF02D693DA400801887 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFEF2D693DA400801887 /* ContentView.swift */; };
 		FDABBFF32D69428200801887 /* ViewDidloadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFF22D69428200801887 /* ViewDidloadModifier.swift */; };
@@ -59,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD0B8C302D97FA9E00008397 /* NsRegularExpressionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NsRegularExpressionExtension.swift; sourceTree = "<group>"; };
 		FD5DC7BA2D73A38E009255D9 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		FD5DC7BC2D73A601009255D9 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		FD5DC7BE2D73AEA7009255D9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
@@ -67,6 +77,14 @@
 		FD8D3BC72D7C421000DC84EC /* MakeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeHistoryView.swift; sourceTree = "<group>"; };
 		FD8D3BC92D7C429A00DC84EC /* AddHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewModel.swift; sourceTree = "<group>"; };
 		FD8D3BCD2D7C452C00DC84EC /* AddHistoryDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryDIContainer.swift; sourceTree = "<group>"; };
+		FD91F1502D97E99100899F99 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		FD91F15B2D97F11900899F99 /* CategoryData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FD91F15C2D97F11900899F99 /* CategoryData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FD91F15D2D97F11900899F99 /* HistoryData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FD91F15E2D97F11900899F99 /* HistoryData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FDAAC5912D90B32E00A024EB /* AccountBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountBook.xcdatamodel; sourceTree = "<group>"; };
+		FDAAC59B2D90B6FA00A024EB /* AccountHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryModel.swift; sourceTree = "<group>"; };
+		FDAAC5A02D90B76300A024EB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FDAAF7B12D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryViewPageViewControllerWrapper.swift; sourceTree = "<group>"; };
 		FDABBFB82D693D6400801887 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABBFBB2D693D6400801887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +99,7 @@
 		FDABBFD82D693D6800801887 /* AccountBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccountBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDABBFDC2D693D6800801887 /* AccountBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookUITests.swift; sourceTree = "<group>"; };
 		FDABBFDE2D693D6800801887 /* AccountBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FDABBFEB2D693D9A00801887 /* AccountData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
+		FDABBFEB2D693D9A00801887 /* AccountHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHistory.swift; sourceTree = "<group>"; };
 		FDABBFEC2D693D9B00801887 /* AccountBookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBookViewModel.swift; sourceTree = "<group>"; };
 		FDABBFEF2D693DA400801887 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FDABBFF22D69428200801887 /* ViewDidloadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidloadModifier.swift; sourceTree = "<group>"; };
@@ -146,6 +164,29 @@
 			path = DIContainer;
 			sourceTree = "<group>";
 		};
+		FD91F1632D97F12100899F99 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				FDAAC5902D90B32E00A024EB /* AccountBook.xcdatamodeld */,
+				FD91F15B2D97F11900899F99 /* CategoryData+CoreDataClass.swift */,
+				FD91F15C2D97F11900899F99 /* CategoryData+CoreDataProperties.swift */,
+				FD91F15D2D97F11900899F99 /* HistoryData+CoreDataClass.swift */,
+				FD91F15E2D97F11900899F99 /* HistoryData+CoreDataProperties.swift */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		FDAAC59F2D90B74700A024EB /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD91F1632D97F12100899F99 /* Define */,
+				FDAAC5A02D90B76300A024EB /* Model.swift */,
+				FDAAC59B2D90B6FA00A024EB /* AccountHistoryModel.swift */,
+				FD91F1502D97E99100899F99 /* CategoryModel.swift */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
 		FDAAF7AF2D73D4EC001DA283 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +235,7 @@
 		FDABBFBA2D693D6400801887 /* AccountBook */ = {
 			isa = PBXGroup;
 			children = (
+				FDAAC59F2D90B74700A024EB /* CoreDataModel */,
 				FDAAF7B02D73D50E001DA283 /* AddHistoryView */,
 				FDAAF7AF2D73D4EC001DA283 /* CommonUI */,
 				FD5DC7C02D73AEAC009255D9 /* DI */,
@@ -207,7 +249,7 @@
 				FDABBFBD2D693D6400801887 /* SceneDelegate.swift */,
 				FDABBFBF2D693D6400801887 /* ViewController.swift */,
 				FDABBFEC2D693D9B00801887 /* AccountBookViewModel.swift */,
-				FDABBFEB2D693D9A00801887 /* AccountData.swift */,
+				FDABBFEB2D693D9A00801887 /* AccountHistory.swift */,
 				FDABBFC12D693D6400801887 /* Main.storyboard */,
 				FDABBFC62D693D6700801887 /* LaunchScreen.storyboard */,
 				FDABBFC92D693D6700801887 /* Info.plist */,
@@ -253,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				FDABBFFA2D695D8100801887 /* ViewExtension.swift */,
+				FD0B8C302D97FA9E00008397 /* NsRegularExpressionExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,16 +460,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDAAC5A12D90B76300A024EB /* Model.swift in Sources */,
 				FDB6B4FD2D7CE8440060B068 /* CategoryGridView.swift in Sources */,
 				FDABBFC02D693D6400801887 /* ViewController.swift in Sources */,
 				FDABBFBC2D693D6400801887 /* AppDelegate.swift in Sources */,
+				FD91F1612D97F11900899F99 /* HistoryData+CoreDataClass.swift in Sources */,
 				FDABBFF02D693DA400801887 /* ContentView.swift in Sources */,
+				FD91F1622D97F11900899F99 /* HistoryData+CoreDataProperties.swift in Sources */,
 				FDABBFF62D695CE000801887 /* MainTabbarView.swift in Sources */,
 				FDB6B4FB2D7CE3F10060B068 /* GridView.swift in Sources */,
 				FDC950812D7647CB00903F4A /* AddViews.swift in Sources */,
 				FDABBFFB2D695D8100801887 /* ViewExtension.swift in Sources */,
 				FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */,
 				FDC802132D7F959400A58234 /* KeyboardView.swift in Sources */,
+				FD91F1602D97F11900899F99 /* CategoryData+CoreDataProperties.swift in Sources */,
+				FD91F15F2D97F11900899F99 /* CategoryData+CoreDataClass.swift in Sources */,
 				FDABBFEE2D693D9B00801887 /* AccountBookViewModel.swift in Sources */,
 				FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */,
 				FDABBFBE2D693D6400801887 /* SceneDelegate.swift in Sources */,
@@ -434,12 +482,16 @@
 				FD8D3BCA2D7C429A00DC84EC /* AddHistoryViewModel.swift in Sources */,
 				FDABBFF82D695D3800801887 /* AccountView.swift in Sources */,
 				FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */,
+				FD0B8C312D97FA9E00008397 /* NsRegularExpressionExtension.swift in Sources */,
 				FD8D3BCE2D7C452C00DC84EC /* AddHistoryDIContainer.swift in Sources */,
 				FDAAF7B22D73D52D001DA283 /* AddHistoryViewPageViewControllerWrapper.swift in Sources */,
 				FD7A97542D757487001129E0 /* FullScreenSheetHelper.swift in Sources */,
+				FDAAC59D2D90B6FA00A024EB /* AccountHistoryModel.swift in Sources */,
 				FD5DC7BB2D73A38E009255D9 /* PageViewController.swift in Sources */,
 				FDABBFF32D69428200801887 /* ViewDidloadModifier.swift in Sources */,
-				FDABBFED2D693D9B00801887 /* AccountData.swift in Sources */,
+				FDABBFED2D693D9B00801887 /* AccountHistory.swift in Sources */,
+				FD91F1512D97E99100899F99 /* CategoryModel.swift in Sources */,
+				FDAAC5922D90B32E00A024EB /* AccountBook.xcdatamodeld in Sources */,
 				FD5DC7BD2D73A601009255D9 /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,6 +841,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FDAAC5902D90B32E00A024EB /* AccountBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FDAAC5912D90B32E00A024EB /* AccountBook.xcdatamodel */,
+			);
+			currentVersion = FDAAC5912D90B32E00A024EB /* AccountBook.xcdatamodel */;
+			path = AccountBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FDABBFB02D693D6400801887 /* Project object */;
 }
