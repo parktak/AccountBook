@@ -11,10 +11,15 @@ enum AddHistoryType {
     case spending, income
 }
 
+enum AddHistoryUIChange {
+    case successToAdd, failToAdd
+}
+
 class AddHistoryViewModelWrapper: ObservableObject {
     private(set) var viewModel: AddHistoryViewModel
     @Published var categories = [Category]()
     @Published private(set) var calculatorData = ""
+    @Published private(set) var title = ""
     
     private var cancellable = Set<AnyCancellable>()
     private var type: AddHistoryType
@@ -46,8 +51,14 @@ class AddHistoryViewModelWrapper: ObservableObject {
                 self?.calculatorData = calcData
             }
             .store(in: &cancellable)
+        
+        viewModel.$title
+            .sink { [weak self] title in
+                self?.title = title
+            }
+            .store(in: &cancellable)
     }
-    
+ 
 }
 
 class AddHistoryViewModel {
@@ -55,16 +66,24 @@ class AddHistoryViewModel {
     @Published private(set) var incomeCategories = [Category]()
     @Published private(set) var spendingCategories = [Category]()
     @Published private(set) var calculatorData = ""
+    @Published private(set) var title = ""
+    private(set) var date = ""
+    
+    private var selectedCategory: Category?
+    let subject = PassthroughSubject<AddHistoryUIChange, Never>()
     
     func loadData() {
         let categories = Model.category.getCategoryDatas()
         incomeCategories = categories.filter { $0.type == .income }
-        spendingCategories = categories.filter { $0.type == .spending}
-        
+        spendingCategories = categories.filter { $0.type == .spending }
     }
     
     func removeLast() {
         calculatorData.removeLast()
+    }
+    
+    func setTitle(_ title: String) {
+        self.title = title
     }
     
     func addCalcData(_ value: String) {
@@ -77,11 +96,43 @@ class AddHistoryViewModel {
         calculatorData += value
     }
     
+    func selectCategory(_ category: Category) {
+        selectedCategory = category
+        print("category -> \(category.title)")
+    }
+    
+    func add() {
+        // 수식을 계산안했으면 먼저 계산해주고
+        if calculatorData.contains("+") || calculatorData.contains("-") {
+            calculate()
+        }
+        
+        guard let amount = Float(self.calculatorData),
+        let selectedCategory else {
+            return
+        }
+        
+        date = TimeUtil.today()
+        let data = AccountHistory(id: TimeUtil.now(),
+                                  type: selectedCategory.type,
+                                  category: selectedCategory,
+                                  title: self.title,
+                                  amount: amount,
+                                  date: date,
+                                  memo: "")
+        
+        print(data)
+        let result = Model.accountHistory.insert(data)
+        
+        result ? subject.send(.successToAdd) : subject.send(.failToAdd)
+    }
+    
     private func calculate() {
         
         guard let regex = try? NSRegularExpression(pattern: "([+-])", options: []) else {
             return
         }
+        
         let datas = regex.split(string: calculatorData)
         
         if datas.isEmpty {

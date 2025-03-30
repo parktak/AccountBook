@@ -5,7 +5,7 @@
 //  Created by 박탁인 on 2025/03/24.
 //
 
-import Foundation
+import Combine
 import CoreData
 
 
@@ -25,9 +25,6 @@ class Model {
         return container
     }()
     
-    func load() {
-        
-    }
     
     static func createBasicCategoriesIfNeed() {
         if !category.getCategoryDatas().isEmpty {

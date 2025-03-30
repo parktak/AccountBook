@@ -12,6 +12,7 @@ import SwiftUI
 struct CategoryGridListView: View {
     private let columns: Int
     var viewModelWrapper: AddHistoryViewModelWrapper
+    @State private var isShownKeyboard = false
     
     init(columns: Int, viewModelWrapper: AddHistoryViewModelWrapper) {
         self.columns = columns
@@ -23,10 +24,30 @@ struct CategoryGridListView: View {
             ScrollView {
                 GridView(colums: columns, list: viewModelWrapper.categories) { category in
                     category.toView()
+                        .onTapGesture {
+                        viewModelWrapper.viewModel.selectCategory(category)
+                        isShownKeyboard = true
+                    }
                 }
+            }
+            
+            if isShownKeyboard {
+                VStack {
+                    Spacer()
+                    KeyboardView(viewModelWrapper: viewModelWrapper)
+                }
+                .frame(maxHeight: .infinity)
+            }
+        }
+        .onReceive(viewModelWrapper.viewModel.subject) { change in
+            switch change {
+            case .successToAdd:
+                isShownKeyboard = false
+            default: break
             }
         }
     }
+        
     
 }
 
@@ -34,6 +55,7 @@ struct CategoryGridListView: View {
 struct CategoryVGridView: View {
     private let columns: Int
     var viewModelWrapper: AddHistoryViewModelWrapper
+    @State private var isShownKeyboard = false
     
     init(columns: Int, viewModelWrapper: AddHistoryViewModelWrapper) {
         self.columns = columns
@@ -55,7 +77,8 @@ struct CategoryVGridView: View {
                         ForEach(viewModelWrapper.categories) { category in
                             category.toView()
                                 .onTapGesture {
-                                    
+                                    viewModelWrapper.viewModel.selectCategory(category)
+                                    isShownKeyboard = true
                                 }
                         }
                     }
@@ -65,12 +88,21 @@ struct CategoryVGridView: View {
             }
             .frame(maxHeight: .infinity)
             
-            VStack {
-                Spacer()
-                KeyboardView(viewModelWrapper: viewModelWrapper)
+            if isShownKeyboard {
+                VStack {
+                    Spacer()
+                    KeyboardView(viewModelWrapper: viewModelWrapper)
+                }
+                .frame(maxHeight: .infinity)
             }
-            .frame(maxHeight: .infinity)
                 
+        }
+        .onReceive(viewModelWrapper.viewModel.subject) { change in
+            switch change {
+            case .successToAdd:
+                isShownKeyboard = false
+            default: break
+            }
         }
     }
 }

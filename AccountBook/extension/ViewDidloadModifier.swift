@@ -8,6 +8,23 @@
 import Foundation
 import SwiftUI
 
+
+extension View {
+    func showToastView(_ message: String) -> some View {
+        VStack {
+            Spacer()
+            Text(message)
+                .padding()
+                .background(Color.black.opacity(0.8))
+                .foregroundColor(.white)
+                .clipShape(Capsule())
+                .padding(.bottom, 50)
+            Spacer()
+        }
+        .transition(.opacity)
+    }
+}
+
 typealias ViewDidloadAction = (() -> Void)
 
 struct ViewDidLoadModifier: ViewModifier {

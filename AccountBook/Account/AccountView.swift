@@ -70,7 +70,8 @@ struct AccountCell: View {
                     Image(data.category.image).resizable().frame(width: 40, height: 40)
                     Text(data.title).font(.caption)
                     Spacer()
-                    Text("\(data.money)").font(.caption)
+                    
+                    Text(getMoneyString()).font(.caption)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20))
                 }
                 .padding(.vertical, 10)
@@ -85,6 +86,17 @@ struct AccountCell: View {
         }
         .removeSeparator()
         
+    }
+    
+    private func getMoneyString() -> String {
+        let iMoney  = Int(data.money)
+        var money = ""
+        if data.money - Float(iMoney) > 0 {
+            money = String(format: "%.2f", data.money)
+        } else {
+            money = "\(iMoney)"
+        }
+        return money
     }
 }
 

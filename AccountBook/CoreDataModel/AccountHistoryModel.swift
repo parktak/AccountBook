@@ -6,11 +6,16 @@
 //
 //
 
-import Foundation
+import Combine
 import CoreData
+
+enum AccountModelEvent {
+    case insert(AccountHistory), delete(AccountHistory), update(AccountHistory)
+}
 
 class AccountHistoryModel {
     
+    let modelChangeSubject = PassthroughSubject<AccountModelEvent, Never>()
     private var context: NSManagedObjectContext {
         Model.shared.persistentContainer.viewContext
     }
@@ -29,7 +34,7 @@ class AccountHistoryModel {
         history.setValue(data.memo, forKey: "memo")
         history.setValue(data.type.rawValue, forKey: "type")
         history.setValue(data.id, forKey: "id")
-        
+        modelChangeSubject.send(.insert(data))
         return Model.saveContext(context)
     }
     

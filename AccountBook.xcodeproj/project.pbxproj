@@ -44,6 +44,8 @@
 		FDABBFFE2D695E1600801887 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABBFFD2D695E1600801887 /* AccountDetailView.swift */; };
 		FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */; };
 		FDB27D532D6A7F1D00B8062C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB27D522D6A7F1D00B8062C /* Images.xcassets */; };
+		FDB34C892D98B584006EC3A4 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB34C882D98B584006EC3A4 /* KeyboardAdaptive.swift */; };
+		FDB34C8C2D98C12E006EC3A4 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB34C8B2D98C12E006EC3A4 /* TimeUtil.swift */; };
 		FDB6B4FB2D7CE3F10060B068 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6B4FA2D7CE3F10060B068 /* GridView.swift */; };
 		FDB6B4FD2D7CE8440060B068 /* CategoryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6B4FC2D7CE8440060B068 /* CategoryGridView.swift */; };
 		FDC802132D7F959400A58234 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC802122D7F959400A58234 /* KeyboardView.swift */; };
@@ -109,6 +111,8 @@
 		FDABBFFD2D695E1600801887 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		FDB27D4F2D6A7CAE00B8062C /* AddHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHistoryView.swift; sourceTree = "<group>"; };
 		FDB27D522D6A7F1D00B8062C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FDB34C882D98B584006EC3A4 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
+		FDB34C8B2D98C12E006EC3A4 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
 		FDB6B4FA2D7CE3F10060B068 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		FDB6B4FC2D7CE8440060B068 /* CategoryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGridView.swift; sourceTree = "<group>"; };
 		FDC802122D7F959400A58234 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
@@ -235,10 +239,12 @@
 		FDABBFBA2D693D6400801887 /* AccountBook */ = {
 			isa = PBXGroup;
 			children = (
+				FDB34C8A2D98C124006EC3A4 /* Util */,
 				FDAAC59F2D90B74700A024EB /* CoreDataModel */,
 				FDAAF7B02D73D50E001DA283 /* AddHistoryView */,
 				FDAAF7AF2D73D4EC001DA283 /* CommonUI */,
 				FD5DC7C02D73AEAC009255D9 /* DI */,
+				FDB34C872D98B56B006EC3A4 /* Modifier */,
 				FDB27D512D6A7EFC00B8062C /* resource */,
 				FDABBFFC2D695DAC00801887 /* Account */,
 				FDABBFF92D695D7400801887 /* Extensions */,
@@ -325,6 +331,22 @@
 				FD8A61A32D756F2E0011271D /* Colors.xcassets */,
 			);
 			path = resource;
+			sourceTree = "<group>";
+		};
+		FDB34C872D98B56B006EC3A4 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				FDB34C882D98B584006EC3A4 /* KeyboardAdaptive.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		FDB34C8A2D98C124006EC3A4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FDB34C8B2D98C12E006EC3A4 /* TimeUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,7 +501,9 @@
 				FD5DC7BF2D73AEA7009255D9 /* DIContainer.swift in Sources */,
 				FDABBFBE2D693D6400801887 /* SceneDelegate.swift in Sources */,
 				FD8D3BC82D7C421000DC84EC /* MakeHistoryView.swift in Sources */,
+				FDB34C8C2D98C12E006EC3A4 /* TimeUtil.swift in Sources */,
 				FD8D3BCA2D7C429A00DC84EC /* AddHistoryViewModel.swift in Sources */,
+				FDB34C892D98B584006EC3A4 /* KeyboardAdaptive.swift in Sources */,
 				FDABBFF82D695D3800801887 /* AccountView.swift in Sources */,
 				FDB27D502D6A7CAE00B8062C /* AddHistoryView.swift in Sources */,
 				FD0B8C312D97FA9E00008397 /* NsRegularExpressionExtension.swift in Sources */,

@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AddHistoryView: View {
     var viewModel: AddHistoryViewModel
-    
     @State private var selectedIndex = 0
+    @State private var showToast = false
+    @State private var toastMessage = ""
+    
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -28,6 +31,9 @@ struct AddHistoryView: View {
                 }
                 Text("추가")
                     
+                if showToast {
+                    showToastView(toastMessage)
+                }
             }
             .frame(maxWidth: .infinity)
             
@@ -41,6 +47,23 @@ struct AddHistoryView: View {
         })
         .frame(maxWidth: .infinity, minHeight: 50, alignment: .top)
         .padding(.horizontal, 16)
+        .onReceive(viewModel.subject) { change in
+            switch change {
+            case .successToAdd:
+                self.showToast = true
+                toastMessage = "성공"
+            case .failToAdd:
+                self.showToast = true
+                toastMessage = "실패"
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                withAnimation {
+                    showToast = false
+                }
+            }
+        }
+        
         
     }
     
@@ -59,7 +82,7 @@ struct AddHistoryView: View {
             AddHistoryDIContainer.createIncomView(viewModel).tag(1)
 //            TransferView().tag(2)
         }
-        .tabViewStyle(.page)
+        .tabViewStyle(.page(indexDisplayMode: .never))
     }
     
     private func pageViewControllerForUIKit() -> some View {
@@ -67,13 +90,6 @@ struct AddHistoryView: View {
     }
 }
 
-
-struct AddHistoryView_Previews: PreviewProvider {
-    
-    static var previews: AddHistoryView {
-        AddHistoryDIContainer.createAddHistoryView()
-    }
-}
 
 /// for category add ui
 extension Category {
@@ -86,3 +102,12 @@ extension Category {
         }
     }
 }
+
+/**
+ struct AddHistoryView_Previews: PreviewProvider {
+     
+     static var previews: AddHistoryView {
+         AddHistoryDIContainer.createAddHistoryView()
+     }
+ }
+ */
