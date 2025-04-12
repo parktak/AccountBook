@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 /// for ios 13
-struct CategoryGridListView: View {
+struct CategoryGridListView: CategoryGridBaseView {
     private let columns: Int
     var viewModelWrapper: AddHistoryViewModelWrapper
     @State private var isShownKeyboard = false
@@ -19,14 +19,17 @@ struct CategoryGridListView: View {
         self.viewModelWrapper = viewModelWrapper
     }
     
+    func setShownKeyboard(_ isShown: Bool) {
+        self.isShownKeyboard = isShown
+    }
+    
     var body: some View {
         ZStack {
             ScrollView {
                 GridView(colums: columns, list: viewModelWrapper.categories) { category in
                     category.toView()
                         .onTapGesture {
-                        viewModelWrapper.viewModel.selectCategory(category)
-                        isShownKeyboard = true
+                            viewModelWrapper.viewModel.excuteCategoryEvent(category)
                     }
                 }
             }
@@ -40,11 +43,7 @@ struct CategoryGridListView: View {
             }
         }
         .onReceive(viewModelWrapper.viewModel.subject) { change in
-            switch change {
-            case .successToAdd:
-                isShownKeyboard = false
-            default: break
-            }
+            excuteBindingEvent(change)
         }
     }
         
@@ -52,7 +51,7 @@ struct CategoryGridListView: View {
 }
 
 @available(iOS 14.0, *)
-struct CategoryVGridView: View {
+struct CategoryVGridView: CategoryGridBaseView {
     private let columns: Int
     var viewModelWrapper: AddHistoryViewModelWrapper
     @State private var isShownKeyboard = false
@@ -69,6 +68,10 @@ struct CategoryVGridView: View {
         GridItem(.flexible())
     ]
     
+    func setShownKeyboard(_ isShown: Bool) {
+        self.isShownKeyboard = isShown
+    }
+    
     var body: some View {
         ZStack {
             VStack {
@@ -77,8 +80,7 @@ struct CategoryVGridView: View {
                         ForEach(viewModelWrapper.categories) { category in
                             category.toView()
                                 .onTapGesture {
-                                    viewModelWrapper.viewModel.selectCategory(category)
-                                    isShownKeyboard = true
+                                    viewModelWrapper.viewModel.excuteCategoryEvent(category)
                                 }
                         }
                     }
@@ -93,16 +95,40 @@ struct CategoryVGridView: View {
                     Spacer()
                     KeyboardView(viewModelWrapper: viewModelWrapper)
                 }
-                .frame(maxHeight: .infinity)
+                .transition(.move(edge: .bottom))
+                .animation(.easeInOut, value: isShownKeyboard)
             }
                 
         }
         .onReceive(viewModelWrapper.viewModel.subject) { change in
-            switch change {
-            case .successToAdd:
-                isShownKeyboard = false
-            default: break
-            }
+            excuteBindingEvent(change)
+        }
+    }
+
+}
+
+// ios 13, 14 한번에 처리 할 수 있도록
+fileprivate protocol CategoryGridBaseView: View {
+    func setShownKeyboard(_ isShown: Bool)
+}
+
+fileprivate extension CategoryGridBaseView {
+    
+    func showAddCategoryView() {
+        
+    }
+    
+    func excuteBindingEvent(_ change: AddHistoryUIChange) {
+        switch change {
+        case .addHistory:
+            setShownKeyboard(true)
+            
+        case .successToAdd:
+            setShownKeyboard(false)
+            
+        case .addCategory:
+            showAddCategoryView()
+        default: break
         }
     }
 }

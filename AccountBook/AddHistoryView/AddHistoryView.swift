@@ -30,10 +30,6 @@ struct AddHistoryView: View {
                     Spacer()
                 }
                 Text("추가")
-                    
-                if showToast {
-                    showToastView(toastMessage)
-                }
             }
             .frame(maxWidth: .infinity)
             
@@ -55,14 +51,10 @@ struct AddHistoryView: View {
             case .failToAdd:
                 self.showToast = true
                 toastMessage = "실패"
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                withAnimation {
-                    showToast = false
-                }
+            default: break
             }
         }
+        .showToast(isPresented: $showToast, message: toastMessage)
         
         
     }

@@ -12,7 +12,7 @@ enum AddHistoryType {
 }
 
 enum AddHistoryUIChange {
-    case successToAdd, failToAdd
+    case addHistory, successToAdd, failToAdd, addCategory
 }
 
 class AddHistoryViewModelWrapper: ObservableObject {
@@ -35,13 +35,13 @@ class AddHistoryViewModelWrapper: ObservableObject {
         case .income:
             viewModel.$incomeCategories
                 .sink { [weak self] category in
-                    self?.categories = category
+                    self?.setCategory(category)
                 }
                 .store(in: &cancellable)
         case .spending:
             viewModel.$spendingCategories
                 .sink { [weak self] category in
-                    self?.categories = category
+                    self?.setCategory(category)
                 }
                 .store(in: &cancellable)
         }
@@ -59,6 +59,11 @@ class AddHistoryViewModelWrapper: ObservableObject {
             .store(in: &cancellable)
     }
  
+    private func setCategory(_ categories: [Category]) {
+        self.categories.removeAll()
+        self.categories = categories
+        self.categories.append(Category.makeAddCategory())
+    }
 }
 
 class AddHistoryViewModel {
@@ -96,35 +101,61 @@ class AddHistoryViewModel {
         calculatorData += value
     }
     
-    func selectCategory(_ category: Category) {
+    func excuteCategoryEvent(_ category: Category) {
+        
+        if category.type == .add {
+            subject.send(.addCategory)
+            return
+        }
+        
+        selectCategory(category)
+        subject.send(.addHistory)
+    }
+    
+    private func selectCategory(_ category: Category) {
         selectedCategory = category
-        print("category -> \(category.title)")
     }
     
     func add() {
         // 수식을 계산안했으면 먼저 계산해주고
-        if calculatorData.contains("+") || calculatorData.contains("-") {
-            calculate()
-        }
-        
-        guard let amount = Float(self.calculatorData),
-        let selectedCategory else {
+//        if calculatorData.contains("+") || calculatorData.contains("-") {
+//            calculate()
+//        }
+//        
+//        guard let amount = Float(self.calculatorData),
+        guard let selectedCategory else {
             return
         }
+//        
+//        date = TimeUtil.today()
+//        let data = AccountHistory(id: TimeUtil.now(),
+//                                  type: selectedCategory.type,
+//                                  category: selectedCategory,
+//                                  title: self.title,
+//                                  amount: amount,
+//                                  date: date,
+//                                  memo: "")
+//        
+//        let result = Model.accountHistory.insert(data)
+//        clear()
         
-        date = TimeUtil.today()
         let data = AccountHistory(id: TimeUtil.now(),
-                                  type: selectedCategory.type,
+                                  type: .income,
                                   category: selectedCategory,
-                                  title: self.title,
-                                  amount: amount,
+                                  title: "aaa",
+                                  amount: 50,
                                   date: date,
                                   memo: "")
         
-        print(data)
         let result = Model.accountHistory.insert(data)
-        
         result ? subject.send(.successToAdd) : subject.send(.failToAdd)
+    }
+    
+    private func clear() {
+        calculatorData.removeAll()
+        selectedCategory = nil
+        self.title = ""
+        self.date = ""
     }
     
     private func calculate() {

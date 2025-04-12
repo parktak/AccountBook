@@ -9,7 +9,7 @@ import Foundation
 
 
 enum SpendType: String {
-    case income = "I", spending = "S"
+    case income = "I", spending = "S", add = "A"
 }
 
 struct AccountHistory: Identifiable, Hashable {
@@ -33,6 +33,10 @@ struct Category: Identifiable, Hashable {
     var code = ""
     var title = ""
     var image = ""
+    
+    static func makeAddCategory() -> Category {
+        Category(type: .add, code: "AddCategory0001", title: "추가", image: "icAdd")
+    }
 }
 
 class AccountModel {

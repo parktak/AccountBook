@@ -40,7 +40,10 @@ struct KeyboardView: View {
                             .background(Color.white)
                             
                             Button(action: {
-                                viewModelWrapper.viewModel.add()
+                                hideKeyboard() {
+                                    self.viewModelWrapper.viewModel.add()
+                                }
+                                
                             }, label: {
                                 Text("저장")
                             })
@@ -139,6 +142,19 @@ struct KeyboardView: View {
         .background(Color.blue)
     }
 }
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard(_ completion: (() -> Void)?) {
+        UIView.animate(withDuration: 0, animations: {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }, completion: { _ in
+            completion?()
+        })
+        
+    }
+}
+#endif
 
 //struct KeyboardView_Preview: PreviewProvider {
 //    static var previews: KeyboardView {
