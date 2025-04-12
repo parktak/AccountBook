@@ -118,36 +118,27 @@ class AddHistoryViewModel {
     
     func add() {
         // 수식을 계산안했으면 먼저 계산해주고
-//        if calculatorData.contains("+") || calculatorData.contains("-") {
-//            calculate()
-//        }
-//        
-//        guard let amount = Float(self.calculatorData),
-        guard let selectedCategory else {
+        if calculatorData.contains("+") || calculatorData.contains("-") {
+            calculate()
+        }
+        
+        guard let amount = Float(self.calculatorData),
+        let selectedCategory else {
             return
         }
-//        
-//        date = TimeUtil.today()
-//        let data = AccountHistory(id: TimeUtil.now(),
-//                                  type: selectedCategory.type,
-//                                  category: selectedCategory,
-//                                  title: self.title,
-//                                  amount: amount,
-//                                  date: date,
-//                                  memo: "")
-//        
-//        let result = Model.accountHistory.insert(data)
-//        clear()
-        
+ 
+        date = TimeUtil.today()
         let data = AccountHistory(id: TimeUtil.now(),
-                                  type: .income,
+                                  type: selectedCategory.type,
                                   category: selectedCategory,
-                                  title: "aaa",
-                                  amount: 50,
+                                  title: self.title,
+                                  amount: amount,
                                   date: date,
                                   memo: "")
         
         let result = Model.accountHistory.insert(data)
+        clear()
+        
         result ? subject.send(.successToAdd) : subject.send(.failToAdd)
     }
     
